@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your AI Travel Plan</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>Your AI Travel Plan</h1>
+  <p class="subtitle">Smart • Budget-Friendly • Student-Focused</p>
+
+  <!-- Route Overview -->
+  <div class="card">
+    <h3><i class="fa-solid fa-route"></i> Route Overview</h3>
+    <p><strong>From:</strong> {{ origin|capitalize }}</p>
+    <p><strong>To:</strong> {{ destination|capitalize }}</p>
+    <p><strong>Route:</strong> {{ route }}</p>
+  </div>
+
+  <!-- Budget Breakdown -->
+  <div class="card">
+    <h3><i class="fa-solid fa-chart-pie"></i> Budget Breakdown</h3>
+
+    <p><i class="fa-solid fa-bus"></i> Travel: ₹{{ budget_info.travel }}</p>
+    <p><i class="fa-solid fa-house"></i> Stay: ₹{{ budget_info.stay }}</p>
+    <p><i class="fa-solid fa-utensils"></i> Food: ₹{{ budget_info.food }}</p>
+    <p><i class="fa-solid fa-receipt"></i> Misc: ₹{{ budget_info.misc }}</p>
+
+    <hr>
+
+    <p><strong>Total Budget:</strong> ₹{{ budget_info.total }}</p>
+    <p><strong>Status:</strong> {{ budget_info.status }}</p>
+  </div>
+
+  <!-- Itinerary -->
+  <div class="card">
+    <h3><i class="fa-solid fa-list-check"></i> Day-wise Itinerary</h3>
+
+    {% for day in plan %}
+      <div class="itinerary-day">
+        {{ day }}
+      </div>
+    {% endfor %}
+  </div>
+
+  <a href="/" class="back">
+    <i class="fa-solid fa-arrow-left"></i> Plan another trip
+  </a>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Travel Planner</title>
+
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <h1>AI Travel Planner for Students</h1>
+  <p class="subtitle">Plan smart, budget-friendly trips with AI</p>
+
+  <form method="POST" action="/result">
+
+    <label><i class="fa-solid fa-location-dot"></i> Current Location</label>
+    <input type="text" name="from" placeholder="e.g. Mysore" required>
+
+    <label><i class="fa-solid fa-flag-checkered"></i> Destination</label>
+    <input type="text" name="to" placeholder="e.g. Delhi" required>
+
+    <label><i class="fa-solid fa-wallet"></i> Budget per day (₹)</label>
+    <input type="number" name="budget" placeholder="e.g. 1000" required>
+
+    <label><i class="fa-solid fa-calendar-days"></i> Number of days</label>
+    <input type="number" name="days" placeholder="e.g. 5" required>
+
+    <label><i class="fa-solid fa-leaf"></i> Travel Interest</label>
+    <select name="interest">
+      <option value="nature">Nature</option>
+      <option value="history">History</option>
+      <option value="beach">Beach</option>
+      <option value="food">Food</option>
+    </select>
+
+    <label><i class="fa-solid fa-user"></i> Travel Style</label>
+    <select name="style">
+      <option value="solo">Solo</option>
+      <option value="group">Group</option>
+    </select>
+
+    <button type="submit">
+      <i class="fa-solid fa-wand-magic-sparkles"></i>
+      Generate Travel Plan
+    </button>
+
+  </form>
+
+</div>
+
+</body>
+</html>

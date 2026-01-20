@@ -1,0 +1,243 @@
+@font-face {
+  font-family: "PerpetuaTitlingMT";
+  src: url("/static/fonts/PerpetuaTitlingMT.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MongolianBaiti";
+  src: url("/static/fonts/MongolianBaiti.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --bg-dark-1: #0a0f1e;
+  --bg-dark-2: #020617;
+  --bg-card: rgba(255, 255, 255, 0.05);
+
+  --border-soft: rgba(255, 255, 255, 0.10);
+
+  --text-main: #FFF8ED;
+  --text-muted: #d6cec3;
+
+  --accent-primary: #6366f1;
+  --accent-secondary: #22c55e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(
+    130deg,
+    #0b1020,
+    #141a2e,
+    #0a0f1e,
+    #151b30
+  );
+  background-size: 400% 400%;
+  animation: gradientBG 16s ease infinite;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "MongolianBaiti", "Times New Roman", serif;
+  color: var(--text-main);
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 560px;
+  padding: 44px;
+  border-radius: 22px;
+
+  background: var(--bg-card);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid var(--border-soft);
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.65),
+    inset 0 0 20px rgba(255, 255, 255, 0.03);
+}
+
+h1 {
+  font-family: "PerpetuaTitlingMT", serif;
+  font-size: 32px;
+  font-weight: normal;
+  text-align: center;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  margin-top: 6px;
+  margin-bottom: 36px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: normal;
+  color: var(--text-muted);
+}
+
+label {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: normal;
+  color: var(--text-muted);
+  font-family: "MongolianBaiti", serif;
+}
+
+label i {
+  margin-right: 8px;
+  color: var(--accent-primary);
+}
+
+
+input,
+select {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 14px;
+
+  background: var(--bg-dark-2);
+  border: 1px solid var(--border-soft);
+
+  color: var(--text-main);
+  font-size: 14px;
+  font-family: "MongolianBaiti", serif;
+
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+input::placeholder {
+  color: #cfc6bb;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3);
+}
+
+button {
+  width: 100%;
+  margin-top: 36px;
+  padding: 15px;
+
+  border-radius: 16px;
+  border: none;
+
+  background: linear-gradient(135deg, #6366f1, #22c55e);
+  color: #020617;
+
+  font-size: 15px;
+  font-weight: normal;
+  font-family: "PerpetuaTitlingMT", serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px rgba(99, 102, 241, 0.4);
+}
+
+button i {
+  margin-right: 8px;
+}
+
+.card {
+  background: var(--bg-dark-2);
+  border: 1px solid var(--border-soft);
+  border-radius: 18px;
+  padding: 24px;
+  margin-bottom: 22px;
+}
+
+.card h3 {
+  font-family: "PerpetuaTitlingMT", serif;
+  font-size: 16px;
+  font-weight: normal;
+  letter-spacing: 1.2px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.card h3 i {
+  margin-right: 10px;
+  color: var(--accent-primary);
+}
+
+.card p {
+  font-size: 14px;
+  margin-bottom: 6px;
+  font-family: "MongolianBaiti", serif;
+}
+
+.card p i {
+  margin-right: 8px;
+  color: var(--accent-secondary);
+}
+
+.itinerary-day {
+  background: var(--bg-dark-2);
+  border-left: 4px solid var(--accent-primary);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  font-family: "MongolianBaiti", serif;
+}
+
+.back {
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: normal;
+  color: var(--accent-primary);
+  text-decoration: none;
+  font-family: "MongolianBaiti", serif;
+}
+
+.back:hover {
+  text-decoration: underline;
+}
